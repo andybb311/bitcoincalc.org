@@ -1,0 +1,2008 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en" xmlns= "http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<meta name="google" content="notranslate" />
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="keywords" content="bitcoin,crypto,'time machine',btc,hodl,bitcoincalc,'bitcoin calculator','bitcoin time machine','digital ledger',digital,ledger,blockchain,'block chain',halving,multiple,'halving multiple',model,'bitcoin halving multiple','halving multiple','bitcoin halving model','halving model','halvening','bitcoin halvening','US dollar', usd, fiat, gbp, eur, jpy, aus, cad, rub, inflation, deflation, hedge, asset, gold, best, research, education, educational" />
+<meta name="description" content="This is an educational resource of Bitcoin, deflation and its experiment against monetary policy, inflation. Contributions are welcomed. " />
+<meta name="website" content="https://bitcoincalc.org/" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<link rel="icon" href="favicon.png">
+<link rel="shortcut icon" type="image/jpg" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<link rel="canonical" href="web/tweet-button">
+<link rel="me" href="https://bitcoincalc.org">
+<title>bitcoincalc.org</title>
+<!--
+
+
+Begin License.
+
+Copyright (c) 2022 bitcoincalc.org
+Copyright (c) 2022 forthepeoplebythepeople@protonmail.com
+
+
+Permission is hereby granted, free of charge, to any person 
+obtaining a copy of this software and associated documentation 
+files (the "Software"), to deal in the Software without 
+restriction, including without limitation the rights to use, copy, 
+modify, merge, publish, distribute, sublicense, and/or sell copies  
+of the Software, and to permit persons to whom the Software is 
+furnished to do so, subject to the following conditions: 
+
+The above copyright notice and this permission notice shall be 
+included in all copies or substantial portions of the Software. 
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF 
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, 
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+DEALINGS IN THE SOFTWARE.
+
+End License.
+
+This is an educational resource of bitcoin, deflation and its experiment against monetary policy, inflation. Contributions are welcomed. 
+
+Further information:
+<a href="bitcoin.pdf" target="_blank" rel="noopener noreferrer">Bitcoin: A Peer-to-Peer Electronic Cash System</a>
+<a href="https://bitcointalk.org" target="_blank" rel="noopener noreferrer">Bitcoin: Forum</a>
+<a href="https://bitcoin.org/" target="_blank" rel="noopener noreferrer">bitcoin.org</a>
+<a href="https://saifedean.com/thebitcoinstandard/" target="_blank" rel="noopener noreferrer">The Bitcoin Standard</a>
+
+Support bitcoincalc.org:
+<a href="bitcoin:bc1qlm3wm7d0ta5mkly6mqxum9lexne22munduauw4">bc1qlm3wm7d0ta5mkly6mqxum9lexne22munduauw4</a>
+
+-->
+
+<!-- Global site tag (gtag.js) - Google Analytics (private testing server tag id) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G12E2ZBJJ5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G12E2ZBJJ5');
+</script>
+
+
+<style>
+
+/*
+==========================================
+	BEM	 
+==========================================
+*/
+
+	/* import fonts */
+	@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+	/* Image 3d spin */
+	@-moz-keyframes spin {100% {-moz-transform: rotateY(360deg);} }
+	@-webkit-keyframes spin {100% {-webkit-transform: rotateY(360deg);} }
+	@keyframes spin {100% {-webkit-transform: rotateY(360deg); transform:rotateY(360deg);} }
+	@keyframes zoom {from {transform: scale(0) translateY(-18em);} to {transform: scale(1) translateY(0);} }
+	@keyframes zoom2 {from {transform: scale(0) translateY(18em);} to {transform: scale(1) translateY(5em);} }
+
+/*
+==========================================
+	Global Properties	 
+==========================================
+*/
+
+	:root,
+	body {
+		-webkit-font-smoothing: antialiased;
+    	-moz-osx-font-smoothing: grayscale;
+		text-rendering: optimizeLegibility;
+  		background-color: #fcfcfc;
+  		color: #000000;
+		font-family: 'Open Sans', 'Courier New', Courier;
+		height: 100%;
+		margin: 0 auto;
+		overflow: auto;
+		width: 100%;
+  	}
+	a {
+		color: #2828ff;
+		padding-left:0.34em;
+		padding-right: 0.34em;
+		padding-top: 0;
+		padding-bottom: 0;
+		margin: 0;
+		text-decoration: none;
+		outline-color: transparent;
+		outline-style: solid;
+		outline-width: 0;
+		border: 0;
+		border-radius: 0.45em;
+	}
+	a:hover {
+		text-decoration: underline;
+		outline-color: transparent;
+	}
+	a:focus {
+		outline-color: #f2a900;
+		outline-width: 0.09em;
+	}
+	a:visited {
+		color: #6b6be0;
+		text-decoration: underline;
+	}
+	button,
+	input,
+	select {
+		cursor: pointer;
+		font-family: 'Open Sans', 'Courier New', Courier;
+		text-rendering:geometricPrecision;
+	}
+	img {
+		margin: 3px auto;
+		padding: 0 5px 1px 5px;
+		vertical-align: middle;
+		/* Image 3d spin */
+		-webkit-animation:spin 9s linear infinite;
+    	-moz-animation:spin 9s linear infinite;
+    	animation:spin 9s linear infinite;
+	}
+	svg path {
+		color: currentColor;
+  		fill: currentcolor;
+		stroke: currentColor;
+	}
+	::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  		/*color: currentColor;*/
+		color: #f2a900;
+  		opacity: 1; /* Firefox */
+	}
+	:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  		/*color: currentColor;*/
+		color: #f2a900;
+	}
+	::-ms-input-placeholder { /* Microsoft Edge */
+  		/*color: currentColor;*/
+		color: #f2a900;
+	}
+	::selection {
+		background-color: #f2a900;
+	}
+	.navTabContent {
+  		display: none;
+		height: 100%;
+		margin: 0 auto;
+		padding: 0;
+		overflow: auto;
+		width: 100%;
+	}
+	.navTabContent::after {
+  		content: "";
+  		clear: both;
+  		display: table;
+	}
+	.main {
+		-webkit-font-smoothing: antialiased;
+    	-moz-osx-font-smoothing: grayscale;
+		text-rendering: optimizeLegibility;
+		background-color: transparent;
+		bottom: 15px;
+		display: block;
+		font-size: 0.6875em;
+		margin: 0 auto;
+		margin-top: 0;
+		overflow: auto;
+		padding: 0;
+		position: absolute;
+		top: 57px;
+		width: 100%;
+	}
+	.mainToggle {
+		-webkit-font-smoothing: antialiased;
+    	-moz-osx-font-smoothing: grayscale;
+		text-rendering: optimizeLegibility;
+		background-color: #1b1b1b;
+  		color: #f1f1f1;
+	}
+	.mainToggle a {
+		color: #6666f1;
+		text-decoration: none;
+	}
+	.mainToggle a:hover {
+		text-decoration: underline;
+	}
+	.mainToggle a:visited {
+		color: #9f9fc9;
+		text-decoration: underline;
+	}
+	.mainToggle input {
+		background-color:#212121;
+		color: #f1f1f1;
+	}
+
+/*
+====================================================
+	Header
+====================================================
+*/	
+	.nav {
+		background: #f2a900;
+		background: radial-gradient(circle, #f2a900 73%, #df9b00 89%, #d18f00 100%);
+		box-shadow: 0 2px 8px #0000000d,0 2px 6px;
+		color: #000000;
+		font-size: 17px;
+		font-family: 'Courier New','Segoe UI', sans-serif;
+		height: 56px;
+		left: 0;
+		min-width: 100%;
+		overflow: hidden;
+		padding: 0 0 0 8px;
+		position: fixed;
+		position: -webkit-sticky;
+		position: sticky;
+		top: 0;
+		width: 100%;
+	}
+	.nav span {
+		box-sizing: border-box;
+		display: block;
+		padding: 0.1em;
+	}
+	.navPrice {
+		background-color: #f1f1f1;
+		border: 1px;
+		border-color:#121212c7;
+		border-radius: 6px;
+		border-style: solid;
+		box-shadow: 0 1px 4px hsla(0,0%,0%,0.05),0 1px 4px;
+		color:#000000f3;
+		display: block;
+		font-family: 'Segoe UI', sans-serif, Courier;
+		font-size: 14px;
+		font-weight: 600;
+		left: 6px;
+		top: 19px;
+		margin: 1px 0 8px 0;
+		min-height: 21px;
+		min-width: -moz-fit-content;
+		min-width: fit-content;
+		position: absolute;
+		padding: 3px 10px 3px 10px;
+		text-align: center;
+		text-rendering: optimizeLegibility;
+  		top: absolute;
+		width: 150px;
+	}
+	.navSettings {
+		background-color: #131313;
+		color: #dbdbdb;
+		display: flex; 
+		align-items: center;
+		font-family: 'Segoe UI', sans-serif, Courier;
+		font-size: 10px;
+		font-weight: normal;
+		left: 0;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+  		top: 0;
+		text-rendering: optimizeLegibility;
+		width: 100%;
+	}
+	.navSettings div,
+	.navSettings span {
+		display: flex;
+		align-items: baseline;
+		font-family: 'Segoe UI', sans-serif, Courier;
+		height: 14px;
+		margin: 0;
+		padding: 0;
+		text-rendering: optimizeLegibility;
+	}
+	.navSettings span {
+		align-items: stretch;
+		height: 100%;
+	}
+	.navSettings button,
+	.navSettings select {
+		display: flex; 
+		align-items: stretch;
+		background-color: transparent;
+		border: 0;
+		color: #dddddd;
+		display: flex;
+		font-family: 'Segoe UI', sans-serif, Courier;
+		font-size: 10px;
+		font-weight: bold;
+		height: 100%;
+		margin: 0;
+		outline:0;
+		padding: 0;
+		padding-left: 5px;
+		padding-right: 5px;
+  		transition-duration: 0.25s;
+		text-rendering: optimizeLegibility;
+	}
+	.navSettings button:hover,
+	.navSettings button:focus,
+	.navSettings select:hover,
+	.navSettings select:focus,
+	.navSettings select:focus {
+		color:#f2a900;
+		outline-color: none;
+	}
+	.navSettings select:hover,
+	.navSettings select:focus,
+	.navSettings select:focus {
+		outline-color: transparent;
+		outline-width: 0;
+	}
+	.navSettings button:focus,
+	.navSettings select:focus {
+		text-decoration: underline;
+	}
+	.navSettings button:hover::after {
+		color: #dddddd;
+		outline-color: transparent;
+		outline-width: 0;
+	}
+	.navSettings button:disabled {
+		background-color: #ffffff83;
+		border: 0;
+		color: #ffffffe6;
+		cursor: not-allowed;
+  		transform: translateY(-18px);
+		outline: none;
+	}
+	.footer a,
+	.navSettings a:visited {
+		color: #dbdbdb;
+		display: inline-flex;
+	}
+	.navSettings a:hover {
+		color: #f2a900;
+		outline: 0;
+		text-decoration: none;
+	}
+	.navSettings a:focus {
+		text-decoration: underline;
+		outline: 0;
+	}
+	#logo {
+		font-size: 11px;
+		padding-left: 17px;
+		padding-right: 28px;
+	}
+	#price-time {
+		font-size: 9px;
+		padding-right: 0;
+		padding-left: 0;
+	}
+	.navSettings select {
+		font-size: 7px;
+		padding-left: 0;
+		padding-right: 0;
+		margin-left: 1px;
+		margin-right: 1px;
+	}
+	.navSettings select option {
+		background-color: #131313;
+	}
+	#time-zone {
+		font-size: 7px;
+		font-weight: bold;
+		margin-right: 0;
+	}
+	#price-date {
+		font-size:9px;
+		padding-left: 13px;
+		padding-right: 20px;
+	}
+	#increase-button {
+		align-content: right;
+		font-size: 14px;
+		padding-left: 5px;
+		padding-right: 1px;
+		margin-right: 1px;
+		margin-top: -2px;
+	}
+	#font-size {
+		font-size: 10px;
+		font-weight: bold;
+		padding-left:1px;
+		padding-right:2px;
+	}
+	#decrease-button {
+		align-content: left;
+		font-size: 14px;
+		padding-left: 3px;
+		padding-right: 6px;
+		margin-left: 1px;
+		margin-right: 1px;
+		margin-top: -2px;
+	}
+	.navTab {
+  		border: none;
+		bottom: 0;
+		display: inline;
+		margin: 0 auto;
+		min-width: 350px;
+		overflow: auto;
+		padding: 20px 12px 0 175px;
+		position: absolute;
+		width: 100%;
+	}
+	.navTab button {
+		background-color: #f1d592;
+		border: 1px;
+		border-color:#121212c7;
+		border-radius: 6px 6px 0 0;
+		border-style: solid;
+		box-shadow: 0 1px 4px #0000000d,0 1px 4px;
+		color:#000000;
+		display: inline;
+		font-family: 'Courier New','Segoe UI', sans-serif;
+		font-size: 14px;
+		font-weight: bold;
+		min-width: 60px;
+		overflow: visible;
+		padding: 2px 9px 4px 12px;
+		position:static;
+		transform: translateX(-5px) translateY(7px) scale(1.05);
+		transition-duration: 0.5s;
+	}
+	.navTab button:focus {
+		outline: none;
+		transform: translateX(-10px) translateY(5px) scale(1.325);
+	}
+	.navTab button:hover {
+		outline: none;
+		transform: translateX(-24px) translateY(4px) scale(1.1);
+		transition-duration: 0.75s;
+	}
+	.navTab button.current {
+		outline: none;
+		overflow: visible;
+		position:static;
+		transform: translateX(-5px) translateY(3px) scale(1.25);
+	}
+	.navTab button.current:hover {
+		outline: none;
+		transform: translateX(-5px) translateY(3px) scale(1.25);
+		transition-duration: 0.75s;
+	}
+	.navTab button.current:focus {
+		outline: none;
+		transform: translateX(-10px) translateY(5px) scale(1.325);	
+	}
+/*
+====================================================
+	Body
+====================================================
+*/	
+#input-header {
+		display: flex; 
+		flex-flow: row wrap;
+		justify-content: center;
+		align-items: center;
+		margin: 0 auto;
+		padding-top: 2em;
+		padding-bottom: 0.5em;
+		position: relative;
+		font-size: 1.125em;
+		min-width: 24em;
+		overflow: hidden;
+		width: 24em;
+	}
+	#input-header>* {
+		flex: 1 1 100%;
+	}
+	#input-header div {
+		display: flex; 
+		align-items: center;
+		width: 100%;
+	}
+	.mainBox {
+		display: flex;
+		align-items: stretch;
+		height: 2em;
+	}
+	.main input {
+		border-color: #bdbdbde5;
+		border-radius: 0.45em;
+		border-style: solid;
+		border-width: 0.18em;
+		cursor: text;
+		display: flex;
+		align-items: stretch;
+		font-family: 'Open Sans', sans-serif;
+		font-size: 1.05em;
+		font-weight: 300;
+		margin: 0;
+		margin-right: 0.25em;
+		outline-color: transparent;
+		outline-style: solid;
+		outline-width: 0.18em;
+		padding: 0.255em;
+		padding-right: 0.25em;
+		touch-action: none; 
+		vertical-align: middle;
+		width: 8em;
+	}
+	.main select,
+	.mainBox select,
+	.main button {
+		background-color: #ffffff45;
+		border-color: #bdbdbde5;
+		border-radius: 0.45em;
+		border-style: solid;
+		border-width: 0.18em;
+		color: inherit;
+		display: flex;
+		align-items: center;
+		font-family: 'Open Sans', sans-serif;
+		font-weight: normal;
+		font-size: 1em;
+		margin: 0;
+		margin-right: 0.25em;
+		height: 2.3em;
+		outline-color: transparent;
+		outline-style: solid;
+		outline-width: 0.18em;
+		padding: 0;
+		padding-right: 0.25em;
+		text-align: justify;
+	}
+	.main input:focus,
+	.main input:hover {
+		outline: none;
+		border-color:#f2a900;
+	}
+	.main select:focus,
+	.main select:hover,
+	.mainBox select:focus,
+	.mainBox select:hover,
+	.main button:hover,
+	.main button:focus {
+		border-color:#f2a900;
+		outline: none;
+	}
+	.main option {
+		background-color: #3a3a3a96;
+	}
+	.dataContainer {
+		background-color: transparent;
+		top: 85px;
+		font-family: "Segoe UI", helvetica, arial;
+		margin: 0 auto;
+		min-width: 93em;
+		overflow: auto;
+		padding: 0;
+		width: 93em;
+	}
+	.dataCell {
+		display: grid;
+		float: left;
+		margin: auto;
+		overflow: hidden;
+		padding: 2px 6px 2px 6px;
+		width: 5em;
+		word-wrap: break-word;
+	}
+	.dataDark {
+		background-color: #cacaca80;
+		display: block;
+		margin: 0;
+		overflow: hidden;
+		padding: 0;
+		width: 100%;
+		word-wrap: normal;
+	}
+	.dataHeader {
+		background-color: #cacaca80;
+		display: block;
+		margin: 0;
+		overflow: hidden;
+		padding: 0;
+		width: 100%;
+		word-wrap: normal;
+	}
+	.dataHeaderCell {
+		display: grid;
+		float: left;
+		margin: auto;
+		overflow: hidden;
+		padding: 2px 6px 2px 6px;
+		width: 5em;
+		word-wrap: break-word;
+	}
+	.dataLight {
+		background-color: #cecece23;
+		display: block;
+		margin: 0;
+		overflow: hidden;
+		padding: 0;
+		width: 100%;
+		word-wrap: normal;
+	}
+	.timeMachine {
+		box-sizing: border-box;
+        font-family: 'Open Sans', sans-serif;
+		font-size: 1.05em;
+		margin: 0 auto;
+		overflow: hidden;
+		padding: 0;
+		padding-left: 0.75em;
+		max-width: 39.2em;
+		width: 39.2em;
+	}
+	.timeMachine div {
+		background-color: #cecece23;
+		border-color: #000000d2;
+		border-style: solid;
+		border-radius: 0.75em;
+		border-width: 0.09em;
+		box-sizing: border-box;
+		display: flex;
+		float: left;
+		min-height: 4.5em;
+		margin: 0 auto;
+		overflow: hidden;
+		padding: 0;
+		width: 100%;
+	}
+	.timeMachine span {
+		background-color: transparent;
+		font-family: 'Open Sans', sans-serif;
+		padding: 0.08em;
+	}
+	.timeMachine h3,
+	.timeMachine h4,
+	.timeMachine h5,
+	.timeMachine h6 {
+		padding: 0;
+		margin: 0;
+	}
+	.timeMachine table {
+		box-sizing: unset;
+		border-width: 1px;
+		border-color: #000000;
+		border-style: solid;
+		border-spacing: 0;
+		border-radius: .6em;
+		box-shadow:
+			inset 0 -3em 3em #00000013,
+            0 0  0 0 #ffffff,
+            0.4em 0.4em 1em #0000009f;
+		font-weight: normal;
+		text-rendering: optimizeLegibility;
+		margin: 0;
+		overflow: hidden;
+		padding: 0;
+		max-width: 34em;
+		width: 34em;
+	}
+	.timeMachine td {
+		text-align: center;
+	}
+	.timeMachine input {
+		-webkit-appearance: none;
+		border-radius: 0.25em;
+		border-style: solid;
+		border-width: 0.18em;
+		outline: none;
+		width: 23.85em;
+		height: 0.25em;
+		margin-left: 4.25em;
+		padding: 0;
+	}
+	.timeMachine input:hover,
+	.timeMachine input:focus {
+		border-color: #f2a900;
+		outline-color: #f2a900;
+	}
+	.timeMachine input::-webkit-slider-thumb {
+		-webkit-appearance: none;
+  		appearance: none;
+		width: 1.3em;
+  		height: 1.3em;
+		border-radius: 50%;
+		background-color: #f2a900;
+		cursor: pointer;
+	}
+	.timeMachine input::-moz-range-thumb {
+		width: 1.3em;
+  		height: 1.3em;
+		border-radius: 50%;
+		background-color: #f2a900;
+		cursor: pointer;
+	}
+	div.timeMachineHeader {
+		background-color: #f2a900;
+		border-color: #000000d2;
+		border-radius: unset;
+		border-radius: 0.5em 0.5em 0 0;
+		border-width: 0.09em 0.09em 0 0.09em;
+		box-sizing: border-box;
+		box-shadow: none;
+		color: #000000;
+		display: inline;
+		float: left;
+		height: fit-content;
+		margin: 0;
+		max-width: -moz-fit-content;
+		max-width: fit-content;
+		min-height: -moz-fit-content;
+		min-height: fit-content;
+		overflow: auto;
+		padding: unset;
+		padding: 0;
+		position: relative;
+	}
+	.timeMachineHeader h3 {
+		background-color: transparent;
+		display: inline;
+		font-family: 'Open Sans', sans-serif;
+		font-size: 1.1em;
+		font-weight: bold;
+	}
+	#mit-license {
+		font-family: 'Courier New', Courier, monospace;
+		font-optical-sizing: auto;
+		height: auto;
+		margin: 0 auto;
+		max-width: 40em;
+		min-width: 32em;
+		width: 35em;
+		overflow: hidden;
+		padding: 2em;
+		text-align: justify;
+		text-rendering:geometricPrecision;
+	}
+	#halving-multiple,
+	#change-log {
+		bottom: 15px;
+		font-family: 'Open Sans', sans-serif;
+		font-optical-sizing: auto;
+		font-size: 1em;
+		height: auto;
+		margin: 0 auto;
+		margin-bottom: 0;
+		max-width: 40em;
+		min-width: 32em;
+		width: 34em;
+		overflow: hidden;
+		padding: 1em 2em 1.2em 2em;
+		text-align: justify;
+		text-rendering:geometricPrecision;
+		word-wrap: break-word;
+	}
+	#halving-multiple span {
+		display: block;
+		margin: auto;
+		text-align: center;
+		width: 27em;
+	}
+	#halving-multiple p {
+		margin: 0 auto;
+		max-width: 28em;
+		min-width: 28em;
+		padding: 2em;
+	}
+	#results-year {
+		background-color: #f2a900;
+		border-color: #000000;
+		border-width: 1px;
+		border-bottom: 0;
+		color: #000000;
+		font-family: 'Courier New','Segoe UI', sans-serif;
+		font-size: 1.53em;
+		font-weight: bold;
+		margin-top: 0.5em;
+		padding: 0.25em;
+	}
+	#results-halving,
+	#halving-percentage { 
+		position: relative;
+		left: 1%;
+	}
+	.head {
+		padding: 0;
+		margin: 0;
+		display:inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding-top: 0.1em;
+		padding-bottom: 0.1em;
+		width: 100%;
+	}
+	.enter-title {
+		margin: 0;
+		padding: 0;
+		display:inline-flex;
+		width: 6.5em;
+	}
+	#halving-event-title {
+		padding-bottom: 0.75em;
+		margin-bottom: 0;
+		padding-left: 0.8em; 
+		display: inline-flex;
+		vertical-align: middle;
+	}
+	#results {
+		animation: zoom 2s;
+		animation-fill-mode: backwards; 
+		width: 100%;
+		padding-top: 2em;
+		margin: 0 auto;
+		background-color: transparent;
+	}
+	#share {
+		animation: zoom2 0.25s;
+		animation-fill-mode: backwards;
+		display: none;
+		margin: 0;
+		padding: 0;
+		vertical-align: middle;
+	}
+	#social {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0;
+		padding: 0;
+		padding-top: 3em;
+		vertical-align: middle;
+	}
+	.twitter-share-button {
+		vertical-align: middle;
+		padding-left: 0.7em;
+		padding-top: 0.1em;
+	}
+
+/*
+====================================================
+	Footer
+====================================================
+*/
+	.footer {
+		background-color: #000000;
+		bottom: 0;
+		border-top: 1px solid #f2a900;
+		color: #dbdbdb;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		float: left;
+		font-family: 'Segoe UI', sans-serif, Courier;
+		font-size: 10px;
+		font-weight: normal;
+		height: 15px;
+		left: 0;
+		margin: 0;
+		overflow: hidden;
+		padding: 0;
+		position: -webkit-sticky;
+		position: sticky;
+		position: fixed;
+		text-rendering: optimizeLegibility;
+		min-width: 45em;
+		width: 100%;
+	}
+	.footer a {
+		color: #dbdbdb;
+		display: inline-flex;
+		margin-right: 18px;
+	}
+	.footer a:focus,
+	.footer a:hover {
+		color: #f2a900;
+		outline: 0;
+		text-decoration: none;
+	}
+	.footer:focus {
+		text-decoration: underline;
+	}
+	.footer a:visited {
+		color: #adadad;
+	}
+	.footer div {
+		display: inline-flex;
+		justify-content: center;
+	}
+</style>
+</head>
+<body>
+<div class="nav">
+	<span class="navPrice" id="bitcoin-price"></span>
+	<div class="navTab">
+		<button 
+			class="navTablinks current" 
+			onclick="openNavTab(event, 'time-machine-wrapper')" 
+			style="margin-left: -6px;">
+			Model
+		</button>
+		<button 
+			class="navTablinks" 
+			onclick="openNavTab(event, 'data-wrapper')" 
+			style="margin-left: -8px;">
+			raw<small>[USD]</small>
+		</button>
+		<button 
+			class="navTablinks" 
+			onclick="openNavTab(event, 'halving-multiple')" 
+			style="margin-left: -9px;">
+			About
+		</button>
+	</div>
+	<div class="navSettings">
+		<div>
+			<a id="logo" href="https://bitcoincalc.org/">bitcoincalc.org</a>
+			<span id="price-time"></span>
+			<select 
+				id="select-time-format" 
+				onchange="timeFormat()">
+				<option id="12">12h</option>
+				<option id="24">24h</option>
+			</select>
+			<span id="time-zone">EDT</span>
+			<span id="price-date"></span>
+		</div>
+		<button 
+			id="increase-button"
+			onclick="increaseFont()">
+			+
+		</button>
+		<span id="font-size">11px</span>
+		<button 
+			id="decrease-button" 
+			onclick="decreaseFont()">
+			-
+		</button>
+		<button  
+			id="toggle-button" 
+			onclick="toggleTheme()">
+			Dark
+		</button>
+	</div>
+</div>
+<div class="main">
+	<div 
+		class="navTabContent"
+		id="time-machine-wrapper"
+		style="display: block;">
+		<div id="input-header">
+			<div class="mainBox">
+				<h4 class="enter-title" id="h4-denom">Enter bitcoin:</h4>
+				<input
+					id="input-bitcoin"
+					type="number"
+					inputmode="decimal"
+					value=""
+					step="1"
+					min="0"
+					oninput="inputBitcoin()" 
+					placeholder="1.00000000"/>
+				<select
+					id="select-bitcoin"
+					onchange="sBitcoin()">
+					<option id="0.00000001" value="sat" style="font-weight: bold">satoshi</option>
+					<option id="0.00000010" value="fin">finney</option>
+					<option id="0.00000100" value="μBTC"><small>bits</small></option>
+					<option id="0.00100000" value="mBTC"><small>milli</small></option>
+					<option id="0.01000000" value="cBTC"><small>centi</small></option>
+					<option id="0.10000000" value="dBTC"><small>deci</small></option>
+					<option id="1.00000000" value="BTC" selected="selected" style="font-weight: bold">bitcoin</option>
+				</select>
+			</div>
+			<div>
+				<h4 class="head">or</h4>
+			</div>
+			<div>
+				<h4 class="enter-title">Enter Value:</h4>
+				<input
+					id="input-fiat"
+					inputmode="decimal"
+					value=""
+					min="0"
+					placeholder="$"
+					oninput="inputFiat()"/>
+				<select
+					id="select-fiat"
+					onchange="sFiat()">
+					<option value="USD">USD</option>
+					<option value="GBP">GBP</option>
+					<option value="EUR">EUR</option>
+				</select>
+			</div>
+			<div>
+				<h4 class="head">and</h4>
+			</div>
+			<div>
+				<h4 class="enter-title">Select Year:</h4>
+				<select
+					id="select-year"
+					value="select year"
+					onchange="show88mph()"
+					style="
+						padding-left: 0.5em;
+						padding-right: 0.5em;">
+				</select>
+				<button 
+					id="go88mph" 
+					onclick="show88mph()" 
+					style="
+						padding-left: 2em;
+						padding-right: 2em;">
+					Calculate
+				</button>
+			</div>
+			<div id="social">
+				<h4 id="share">Share Results:</h4>
+				<a
+				class="twitter-share-button"
+				href="javascript:clickTwit();"
+				data-url="https://bitcoincalc.org"
+				data-hashtags="halvingmultiple"
+				data-via="bitcoincalc_org">
+			</a>
+			</div>
+		</div>
+		<div class="timeMachine" id="results" style="display: none;">
+			<h2 id="halving-event-title">Halving:</h2>
+			<h4 id="results-halving">x of 33</h4>
+			<h4 id="halving-percentage" style="margin-bottom: 0.25em;">Halving %</h4>
+			<input
+				class="slider"
+				type="range" 
+				min="0" 
+				max="33" 
+				value="6" 
+				id="sliding-year">
+			<br>
+			<div id="results-year" class="timeMachineHeader">Report</div>
+			<table>
+				<tbody>
+					<tr style="background-color:#94949415;">
+						<td>
+							<h3 
+								id="tense-value" 
+								style="padding-top: 0.5em; padding-bottom: 0">
+								Tense Value
+							</h3>
+							<h5>of</h5>
+							<h4 
+								id="results-input" 
+								style="padding-bottom: 0.5em;">
+								input
+							</h4>
+						</td>
+						<td>
+							<h3 
+								id="tense-reward" 
+								style="padding-top: 0.5em; padding-bottom: 0">
+								Block Reward
+							</h3>
+							<h5>of</h5>
+							<h4 
+								id="results-reward-BTC" 
+								style="padding-bottom: 0.5em;">
+								input
+							</h4>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<h1 id="results-fiat-value">fiat value</h1>
+						</td>
+						<td>
+							<h1 id="results-reward-fiat">reward fiat</h1>
+						</td>
+					</tr>
+					<tr style="background-color:#94949415;">
+						<td>
+							<h5></h5>
+						</td>
+						<td><h5></h5></td>
+					</tr>
+				</tbody>
+			</table>
+			<p id="note" style="font-size: 0.9em">
+				Please Note
+				<br>
+				1. Due to the linear nature of the projection, further time has elapsed the less probable the results become. 
+				<a href="javascript:openNavTab(event, 'halving-multiple')" >
+					Read more about the halving multiple.
+				</a>
+				<br>
+				2. Fiat currency based off & converted from 
+				<a href="https://api.coindesk.com/v1/bpi/currentprice.json" target="_blank" rel="noopener noreferrer">
+					Coindesk's current USD/fiat value.
+				</a>
+			</p>
+		</div>
+	</div>
+	<div id="mit-license" class="navTabContent">
+		<h3>MIT-License</h3>
+	</div>
+	<div id="halving-multiple" class="navTabContent">
+		<h3>halving-multiple</h3>
+	</div>
+	<div id="data-wrapper" class="navTabContent">
+		<div id="data" class="dataContainer"></div>
+	</div>
+	<div id="change-log" class="navTabContent">
+		<h2>Change Log</h2>
+		<span>
+			<p><b>v1.00.06142022</b><br>-Released bitcoincalc.org to the public.</p>
+		</span>
+		<span>
+			<p><b>v1.00.06162022</b><br>-Updated gtag info and made suggestive changes by the bitcointalk.org forum community</p>
+		</span>
+	</div>
+</div>
+<div class="footer">
+	<a href="javascript:openNavTab(event, 'mit-license')">&#169 2022 bitcoincalc.org</a>
+	<a href="mailto:forthepeoplebythepeople@protonmail.com">forthepeoplebythepeople@protonmail.com</a>
+	<a href="javascript:openNavTab(event, 'change-log')">v1.00.06162022</a>
+</div>
+<script>
+
+
+
+//Tested Chrome Browser (Win 10, Win 11, iPhone 13 Pro Max, iPhone 11, iPone 7, Macbook Pro 2013, iPad, iPad, iPad mini 3, Galaxy 13 tablet 2021)
+//Tested Edge Browser (Win 10, Win 11)
+//Tested Safari Browser (iPhone 13 Pro Max, iPhone 11, iPone 7, Macbook Pro 2013, iPad, iPad, iPad mini 3)
+//Please leave old console output notes for future debugging ;-)
+//	========================================
+//				TODOs- 6/14/22
+//	========================================
+//
+//
+//	Future updates-
+//		-Add historical hsi(us) & s&p(us) comparisions (housing & stock market values)
+//		-Expand fiat currencies ex. (CAD,AUS,JPY,CNY,RUB)
+//		-Allow user to change displayed currency format from default en-US
+//		-Add simple linear chart of time machine processed data
+//		-Refine printinng display by adding a print button w/custom properties
+//		-Hide user display changes under a simple settings menu
+//		-complete datatable for all years
+//		-make csv file available
+//		-make ticker tape to undo or redo inputs
+//		-store variables for future sessions
+//		-create api for others to easily fetch any result
+//		-compare multiplier to every day to give a varying range of future event value
+
+//shortcuts
+function selectedBitcoin(s) {
+	return document.getElementById('select-bitcoin').options[document.getElementById('select-bitcoin').selectedIndex][s];
+}
+function selectedFiat(s) {
+	return document.getElementById('select-fiat').options[document.getElementById('select-fiat').selectedIndex][s];
+}
+
+
+
+
+
+//onChange-> Update bitcoin input box value
+function inputBitcoin() {
+	const o = document.getElementById('input-bitcoin');
+    //deBug(o); //pass object thru debug function
+    if (o.value) {
+        //true
+		if (selectedBitcoin('innerText') === 'satoshi') {
+			o.value = o.value.replace('.', '');
+		}
+		calcBitcoin();
+    } else {
+        //false
+		document.getElementById('input-fiat').value = null;
+	}
+}
+
+
+//onChange-> Update fiat input box value 
+function inputFiat() {
+	const o = document.getElementById('input-fiat');
+    //deBug(o); //pass object thru debug function
+	if (boring(o.value) ==='') {
+		//false to catch non numeric characters
+		document.getElementById('input-fiat').value = null;
+		document.getElementById('input-bitcoin').value = null;
+	}
+    else if (boring(o.value)) {
+        //true numbers
+		document.getElementById('input-fiat').value = iUSformat(boring(o.value)); //apply currency format
+		calcFiat();
+    } else {
+        //false to catch anything else
+		document.getElementById('input-bitcoin').value = null;
+    }
+}
+
+
+//onChange-> update bitcoin denomination
+function sBitcoin() {
+	const o = document.getElementById('select-bitcoin');
+    //deBug(o); //pass object thru debug function
+	let t = o.options[o.options.selectedIndex].innerText; //get denom ratio
+    document.getElementById('input-bitcoin').placeholder = (bitcoin()); //store updated value into elements placeholder
+	document.getElementById('h4-denom').innerText = 'Enter ' + t + ':';
+	inputFiat();
+}
+
+
+//onChange-> update fiat denomination
+function sFiat() {
+	const o = document.getElementById('select-fiat');
+	const c = document.getElementById('input-fiat');
+	const b = document.getElementById('select-bitcoin');
+	const i = document.getElementById('input-bitcoin');
+	//Get/store new fiat denomination and rate
+	let USD = boring(o.options['0'].value);
+	let f = o.options[o.selectedIndex].innerText;
+	let r = o.value;
+	let d = b.options[b.selectedIndex].id;
+	let n = boring(i.value);
+	const ratio = fiatRatios();
+	//process fiat ratio results
+	let l = f + 'vUSD';
+	let dollarUS = Intl.NumberFormat("en-US", {
+		style: "currency",
+		currency: f,
+		maximumFractionDigits: 0,
+	});
+	//format input into fiat currency
+	//let v = dollarUS.format((ratio[l] * boring(c.value)) * d); //orig
+	let v = dollarUS.format((ratio[l]*(USD*n))*d); //new
+	if (boring(c.value)) {
+		//true
+		c.value = v;
+	}
+	//Store new selection and fiat rate to localStorage
+	window.localStorage.setItem('curRate', JSON.stringify(r));
+	window.localStorage.setItem('curFiat', JSON.stringify(f));
+	//Display new fiat & rate
+	document.getElementById('input-fiat').placeholder = r;
+	document.getElementById('bitcoin-price').innerHTML = "<img src='favicon.png' width='20px' height='20px'></img>" + r + ' ' + f;
+	eightyEightmph();
+}
+
+
+//calculate bitcoin change
+function calcBitcoin() {
+	let d = document;
+	const b = d.getElementById('select-bitcoin');
+	const f = d.getElementById('select-fiat');
+	const i = d.getElementById('input-bitcoin');
+	const c = d.getElementById('input-fiat');
+	let r = b.options[b.options.selectedIndex].id; //get denom ratio
+	let n = Math.round(1 / parseFloat(r)); //calc denom ratio against 1
+	let l = (((String(n).length-1)-8)*-1)+0; //calc denom decimal lenght to display
+	if (isNaN(c.value)) {
+		c.value = c.placholder;
+	}
+	c.value = cUSformat((Number(boring(i.value) * boring(f.value)).toFixed(0))*r);
+	eightyEightmph();
+}
+
+
+//calculate fiat change
+function calcFiat() {
+	let d = document;
+	const b = d.getElementById('select-bitcoin');
+	const f = d.getElementById('select-fiat');
+	const i = d.getElementById('input-bitcoin');
+	const c = d.getElementById('input-fiat');
+	let r = b.options[b.options.selectedIndex].id; //get denom ratio
+	let n = Math.round(1 / parseFloat(r)); //calc denom ratio against 1
+	let l = (((String(n).length-1)-8)*-1)+0; //calc denom decimal lenght to display
+	if (isNaN(i.value)) {
+		i.value = i.placholder;
+	}
+	i.value = Number(((boring(c.value) / boring(f.value))/r)).toFixed(l);
+	eightyEightmph();
+}
+
+
+//onChange-> update time machine data
+function eightyEightmph() {
+	//store slider value
+	document.getElementById("sliding-year").value = document.getElementById('select-year').selectedIndex;
+	//load values
+	objCSV = window.value;
+	let input = document.getElementById('input-bitcoin').value;
+	let inputFiat = document.getElementById('input-fiat').value;
+	let halving = document.getElementById('select-year').selectedIndex;
+	let epoch = document.getElementById('select-year').selectedIndex + 1;
+	let code = document.getElementById('select-fiat').options[document.getElementById('select-fiat').selectedIndex].innerText;
+	let rate = document.getElementById('select-fiat').value;
+	let year = document.getElementById('select-year').options[document.getElementById('select-year').selectedIndex].innerText;
+	let denom = document.getElementById('select-bitcoin').value;
+	let denom2 = document.getElementById('select-bitcoin').options[document.getElementById('select-bitcoin').selectedIndex].innerText;
+	let fiat = objCSV[epoch]["Price USD"];
+	let rewardBTC = Number(objCSV[epoch]['Block Reward']);
+	let rewardFiat = objCSV[epoch]['Block Reward USD'];
+
+	//bookmark 6/1/22
+	const apiData = JSON.parse(window.localStorage.getItem('apiData'));
+	const curFiat = JSON.parse(window.localStorage.getItem('curFiat'));
+	let d = new Date(objCSV[epoch]['Date']);
+	let t = new Date(apiData['time']['updated']);
+	let gh = getHours(t-d);
+	let gd = getDays(t-d);
+	let gw = getWeeks(t-d);
+	let gm = getMonths(t-d);
+	let gy = getYears(t-d);
+	//find last halving
+
+	//for (let i = 0; d < t; i++) {
+	//}
+	let placeHolder = document.getElementById('input-bitcoin').placeholder;
+	let btcDenVal = document.getElementById('select-bitcoin').options[document.getElementById('select-bitcoin').selectedIndex].id;
+	let btcDenVal2 = document.getElementById('select-bitcoin').options[document.getElementById('select-bitcoin').selectedIndex].id;
+	if (rewardBTC < 0.00001) {
+		rewardBTC = Number(rewardBTC).toFixed(8);
+	}
+
+	let today = new Date(apiData['time']['updated']).getFullYear();
+	let tenseValue = 'Projection ';
+	let tenseReward = 'Block Reward Projection';
+	if (d < t) {
+		tenseValue = 'Previous Value';
+		tenseReward = 'Previous Block Reward';
+	}
+	//get fiat ratio from select-fiat element stored values
+	const ratio = fiatRatios();
+	//process fiat ratio results
+	if (input === '') {
+		input = Number(1 / btcDenVal2).toFixed(8);
+	}
+	let r = curFiat + 'vUSD';
+	let results = (ratio[r] * (input * (boring(fiat)))) * btcDenVal2;
+	rewardFiat = ratio[r] * rewardFiat;
+	let addTo = {
+		float_len: '5',
+	};
+	let dollarUS = Intl.NumberFormat("en-US", {
+		style: "currency",
+		currency: curFiat,
+		notation: "compact",
+  		compactDisplay: "short",
+		maximumFractionDigits: 0,
+	});
+	//format input into fiat currency
+	results = dollarUS.format(results);
+	rewardFiat = dollarUS.format(rewardFiat);
+	//store and present values to elements
+	document.getElementById('results-halving').innerHTML = halving + ' of 33';
+	document.getElementById('results-input').innerHTML = input * btcDenVal2 + ' bitcoin';
+	document.getElementById('results-fiat-value').innerHTML = results;
+	document.getElementById('results-reward-fiat').innerHTML = rewardFiat;
+	document.getElementById('results-reward-BTC').innerHTML = rewardBTC + ' bitcoin';
+	//store and present selected year to elements
+	document.getElementById('results-year').innerHTML = 'Year ' + year;
+	//store and present tense vlaues to elements
+	document.getElementById('tense-value').innerHTML = tenseValue;
+	document.getElementById('tense-reward').innerHTML = tenseReward;
+	//move elements with slider
+	document.getElementById('results-halving').style.left = ((document.getElementById("sliding-year").value) *.7 ) + 3.8  + 'em';
+	document.getElementById('halving-percentage').style.left = ((document.getElementById("sliding-year").value) *.7 ) + 4.6  + 'em';
+	document.getElementById('results-year').style.left = ((document.getElementById("sliding-year").value) *.47 ) + 0.308 + 'em';
+	//update twitter share button
+	const twt = { 
+		year: year,
+		btc: input * btcDenVal2,
+		fiat: results,
+		yearCur: today,
+		fiatCur: inputFiat,
+		rewardBTC: rewardBTC,
+		rewardFiat: rewardFiat
+	}
+	//store twitter values to local storage
+	window.localStorage.setItem('twt', JSON.stringify(twt));
+	updateData();
+	updateTwitter(twt);
+}
+
+
+//onChange-> show time machine div
+function show88mph() {
+	//show hidden elements
+	document.getElementById('results').style ='display: block-flex;';
+	document.getElementById('share').style = 'display: inline-flex;';
+	//update slider input and % on 1st load
+	document.getElementById('halving-percentage').innerText = Number((document.getElementById('select-year').selectedIndex / 33) * 100).toFixed(0) + '%';
+	document.getElementById('sliding-year').value = document.getElementById('select-year').selectedIndex;
+	twitterLoad();
+	eightyEightmph();
+	updateData();
+}
+
+
+//onChange-> update raw data
+function updateData() {
+	//get local storage objects
+	const objCSV = window.value;
+	const apiData = JSON.parse(window.localStorage.getItem('apiData'));
+	let btcDenVal = document.getElementById('select-bitcoin').options[document.getElementById('select-bitcoin').selectedIndex].id;
+	let price = apiData['bpi']['USD']['rate_float'];
+	let wallet = btcDenVal * document.getElementById('input-bitcoin').value;
+	let today = new Date(apiData['time']['updated']).toLocaleDateString();
+	if (wallet == '') {
+		wallet = 1;
+	}
+	objCSV[0]['Wallet'] = wallet.toFixed(8);
+	objCSV[0]['Wallet USD'] = price.toFixed(8);
+	objCSV[0]['Date'] = today;
+	document.getElementById('r1c13').innerText = wallet.toFixed(8);
+	document.getElementById('r1c14').innerText = price.toFixed(8) * wallet.toFixed(8);
+	document.getElementById('r1c2').innerText = today;
+	
+	for (i = 2; i < objCSV.length; i++) {
+		objCSV[i]['Wallet'] = wallet.toFixed(8);
+		objCSV[i]['Wallet USD'] = Number(objCSV[i]['Price USD']).toFixed(8) * wallet.toFixed(8);
+		document.getElementById('r' + [i + 1] + 'c13').innerText = Number(objCSV[i]['Wallet']).toFixed(8);
+		document.getElementById('r' + [i + 1] + 'c14').innerText = Number(objCSV[i]['Wallet USD']).toFixed(8);
+	}
+	window.value = objCSV;
+}
+
+
+//onChange input slider-> update time machine
+document.getElementById("sliding-year").oninput = function() {
+	document.getElementById('halving-percentage').innerText = Number((this.value / 33) * 100).toFixed(0) + '%';
+	document.getElementById('select-year').selectedIndex = this.value;
+	eightyEightmph();
+}
+
+
+//onChange- upate time format 12h or 24h
+function timeFormat() {
+	let time = document.getElementById('select-time-format').options;
+	let timeIndex = time.selectedIndex;
+	if (timeIndex === 0) {
+		document.getElementById("price-time").innerText = document.getElementById("12").value;
+	} else if (timeIndex === 1) {
+		document.getElementById("price-time").innerText = document.getElementById("24").value
+	}
+}
+
+
+//onChange-> increase main size
+function increaseFont() {
+	var fontElement = document.querySelector(".main").style.fontSize;
+	if (fontElement) {
+		fSize = parseFloat(fontElement);
+		fSize += 0.0625;
+	} else {
+		var fSize = 0.75;
+	}
+	if (fSize >= 0.5) {
+		document.getElementById("decrease-button").disabled = false;
+		document.getElementById("decrease-button").tabIndex = '';
+	}
+	let px = 0.0625;
+	let em = fSize;
+	let fontSizePx = (em / px) + "px";
+	document.getElementById("font-size").innerHTML = fontSizePx;
+	fSize = fSize + "em";
+	document.querySelector(".main").style.fontSize = fSize;
+	focusBack();
+}
+
+
+//onChange-> decrease main size
+function decreaseFont() {
+	var fontElement = document.querySelector(".main").style.fontSize;
+	if (fontElement) {
+		fSize = parseFloat(fontElement);
+		fSize -= 0.0625;
+		if (fSize <= 0.5) {
+			document.getElementById("decrease-button").disabled = true;
+			document.getElementById("decrease-button").tabIndex = '-1';
+		}
+	} else {
+		var fSize = 0.625;
+	}
+	let px = 0.0625;
+	let em = fSize;
+	let fontSizePx = (em / px) + "px";
+	document.getElementById("font-size").innerHTML = fontSizePx;
+	fSize = fSize + "em";
+	document.querySelector(".main").style.fontSize = fSize;
+	focusBack();
+}
+
+
+//onChange-> toggle main theme dark/light
+function toggleTheme() {
+   	var element = document.body;
+	element.classList.toggle("mainToggle");
+	if (element.classList.value === "mainToggle") {
+		//Dark
+		document.getElementById("toggle-button").innerText = "Light";
+	} else {
+		//Light
+		document.getElementById("toggle-button").innerText = "Dark";
+	}
+	focusBack();
+}
+
+
+//onChange-> navigation body tabs
+function openNavTab(evt, tabName) {
+  	var i, tabcontent, tablinks;
+  	tabcontent = document.getElementsByClassName("navTabContent");
+  	for (i = 0; i < tabcontent.length; i++) {
+    	tabcontent[i].style.display = "none";
+ 	}
+  	tablinks = document.getElementsByClassName("navTablinks");
+  	for (i = 0; i < tablinks.length; i++) {
+    	tablinks[i].className = tablinks[i].className.replace(" current", "");
+  	}
+  	document.getElementById(tabName).style.display = "block";
+	if (evt) {
+  		evt.currentTarget.className += " current";
+	}
+	focusBack();
+}
+
+
+//onRequest-> calc fiat ratios function
+function fiatRatios() {
+	const ratio = { 
+		USDvUSD: "",
+		EURvUSD: "",
+		GBPvUSD: ""
+		 };
+	ratio.USDvUSD = boring(document.getElementById('select-fiat').options[0].value) / boring(document.getElementById('select-fiat').options[0].value);
+	ratio.EURvUSD = boring(document.getElementById('select-fiat').options[2].value) / boring(document.getElementById('select-fiat').options[0].value);
+	ratio.GBPvUSD = boring(document.getElementById('select-fiat').options[1].value)/ boring(document.getElementById('select-fiat').options[0].value);
+	return ratio;
+}
+
+
+//onRequest-> console.log debugging function
+function deBug(o) {
+    console.log('');
+    console.log(new Date());
+    console.log('*************************');
+    console.log('*********debug()*********');
+    console.log('*************************');
+    if (o) {
+        //true
+        console.log('o: ');
+        console.log(o);
+        console.log('o.value: ' + o.value);
+        console.log('o.placeholder: ' + o.placeholder);
+        console.log('o.id: ' + o.id);
+        if (o.options) {
+			console.log('o.selectedIndex: ' + o.selectedIndex);
+            console.log('o.options[o.selectedIndex].innerText: ' + o.options[o.selectedIndex].innerText);
+            console.log('o.options[o.selectedIndex].id: ' + o.options[o.selectedIndex].id);
+            console.log('o.options[o.selectedIndex].value: ' + o.options[o.selectedIndex].value);
+        }
+    } else {
+        //false
+        console.log('No object passed or is null');
+    }
+    //this object contents
+    //console.log('this.value:');
+    //console.log(this.value);
+    console.log('');
+}
+
+//onrequest-> return duration from milliseconds
+//excludes leap year, just add 1 day to every 4 years as needed.
+//formula variations: 
+//(0.25d/365y) or (1d/1460y) or (365d+0.25d) or (1460d+1d)
+function getHours(x) {
+	return x = (((x)/1000)/60)/60;
+}
+function getDays(x) {
+	return x = ((((x)/1000)/60)/60)/24;
+}
+function getWeeks(x) {
+	return x = (((((x)/1000)/60)/60)/24)/7;
+}
+function getMonths(x) {
+	return x = ((((((x)/1000)/60)/60)/24)/365)*12;
+}
+function getYears(x) {
+	return x = (((((x)/1000)/60)/60)/24)/365;
+}
+
+
+//onRequest-> Control focus on input box as necessary
+function focusStart() {
+	document.addEventListener('click', focusBack);
+}
+function focusBack() {
+	document.getElementById('input-bitcoin').focus();
+}
+function focusStop() {
+	document.removeEventListener('click', focusBack);
+}
+
+
+//Remove en-US currency from any string of numbers
+function boring(n) {
+	n = n.replace(/[^0-9.]/g, '');
+	return n;
+}
+
+
+//Add en-US currency (comma) formatting
+//Note- Only for integers for now
+function elegant(n) {
+	n = n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	return n;
+}
+
+
+function elegantB(n) {
+	return new Intl.NumberFormat("en-US", {
+		style: "decimal",
+		maximumFractionDigits: 8,
+		roundingIncrement: 1,
+	}).format(n);
+}
+
+
+//onRequest-> calc bitcoin decimal len
+function bitcoin() {
+	let r = selectedBitcoin('id'); //get denom ratio
+	let n = Math.round(1 / parseFloat(r)); //calc denom ratio against 1
+	let l = (((String(n).length-1)-8)*-1)+0; //calc denom decimal lenght to display
+	return n.toFixed(l);
+}
+
+
+//onRequest-> US format
+function cUSformat(f) {
+	let c = selectedFiat('innerText');
+	let m = 0;
+	if (f < 1) {
+		m = 4;
+	} else if (f < 100) {
+		m = 3
+	} else if (f < 1000){
+		m = 2;
+	}
+	return new Intl.NumberFormat("en-US", {
+		style: "currency",
+		currency: c,
+		maximumFractionDigits: m,
+	}).format(f);
+}
+function iUSformat(f) {
+	let c = selectedFiat('innerText');
+	let m = 0;
+	return new Intl.NumberFormat("en-US", {
+		style: "currency",
+		currency: c,
+		maximumFractionDigits: m,
+	}).format(f);
+}
+
+
+//Next Version Todo-
+//Add ability to change from en-US number format to other number formats
+//
+//onRequest-> object -> add international currency format to any en-US number
+function intFormat(f) {
+	let fiat = f.code;
+	let price = String(f.rate_float);
+	let decPos = price.indexOf('.');
+	let length = f.float_len;
+	if (length) {
+		//console.log('Input format');
+		decPos = length;
+	} else {
+		//console.log('Price format');
+	}
+	let dollarUS = Intl.NumberFormat("en-US", {
+		style: "currency",
+		currency: fiat,
+		maximumSignificantDigits: decPos,
+	});
+
+	//Not used- For future use
+	let rupeeIndian = Intl.NumberFormat("en-IN", {
+    	style: "currency",
+    	currency: "INR",
+	});
+	//Not used- For future use
+	let euroGerman = Intl.NumberFormat("de-DE", {
+    	style: "currency",
+    	currency: "EUR",
+	});
+	return dollarUS.format(price);
+}
+
+
+//onClick-> reload twitter w/ updated share button values ********not working
+function clickTwit() {
+	//get local storage twt object
+	const twt = JSON.parse(window.localStorage.getItem('twt'));
+	updateTwitter(twt);
+	twttr.widgets.load(document.getElementById('twit'));
+}
+
+
+//onLoad-> store twitter share button values to 1st time machine selection
+//onChange-> update twitter share button values ********not working
+function updateTwitter(twt) {
+	let time = "was worth ";
+	let time2 = ". Check out "
+	let today = twt['yearCur']
+	if (twt['btc'] < 0.00001) {
+		twt['btc'] = Number(twt['btc']).toFixed(8);
+	}
+	if (twt['year'] <= 2020) {
+		time = "was worth ";
+		time2 = ". Check out the halving multiple model @"
+	} else {
+		time = "could be worth ";
+		time2 = " using the halving multiple @"
+	}
+	let s = "In " + twt['year'] + ", " + twt['btc'] + " #bitcoin " + time + twt['fiat'] + time2;
+	if (boring(twt['fiat']) < 1) {
+		s = "Check out the halving multiple model @"
+	}
+	Object.values(document.getElementsByClassName('twitter-share-button'))[0]['dataset']['text'] = s;
+	//console.log(twt);
+	//console.log(Object.values(document.getElementsByClassName('twitter-share-button'))[0]['dataset']['text']);
+	
+}
+
+
+//onLoad-> twitter api widget
+function twitterLoad() {
+window.twttr = (function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0],
+	  t = window.twttr || {};
+	if (d.getElementById(id)) return t;
+	js = d.createElement(s);
+	js.id = id;
+	js.src = "https://platform.twitter.com/widgets.js";
+	fjs.parentNode.insertBefore(js, fjs);
+  
+	t._e = [];
+	t.ready = function(f) {
+	  t._e.push(f);
+	};
+	return t;
+  }(document, "script", "twitter-wjs"));
+}
+
+
+//onLoad -> onZoom-> Monitoring screen resolution on zoom changes as suggested by mozilla.org
+let pixelRatioBox = document.querySelectorAll("body");
+const updatePixelRatio = () => {
+  	let pr = window.devicePixelRatio;
+  	let prString = (pr * 100).toFixed(0);
+  	pixelRatioBox.innerText = `${prString}% (${pr.toFixed(2)})`;
+ 	matchMedia(`(resolution: ${pr}dppx)`).addEventListener("change", updatePixelRatio, { once: true })
+}
+updatePixelRatio();
+
+
+//Minor Todo-
+//Remove ability to copy and paste error characters inside input box
+//
+//onLoad->  addEventListener->  remove error characters as entered
+var inputBox = document.getElementById('input-bitcoin');
+var invalidChars = [
+  '-',
+  '+',
+  'e',
+  'E',
+];
+inputBox.addEventListener('keydown', function(e) {
+	if (invalidChars.includes(e.key)) {
+    	e.preventDefault();
+  	}
+  	if (e.keyCode == 13) {
+	show88mph();
+  	}
+});
+
+
+//onLoad- Store API objects and values into elements
+function processAPI(apiData) {
+	//Retrieve previous session values from localStorage if avail
+	let curFiat = JSON.parse(window.localStorage.getItem('curFiat'));
+	if (isNaN(curFiat)) {
+		//Set currency as previous session if avail
+		document.getElementById('select-fiat').value = curFiat;
+	} else {
+		//Set new session currency to USD, then store to localStorage
+		curFiat = document.getElementById('select-fiat').value;
+		window.localStorage.setItem('curFiat', JSON.stringify(curFiat));
+	}
+	//Set currency rate then store to localStorage for future call
+	const curRate = intFormat(apiData['bpi'][curFiat]);
+	window.localStorage.setItem('curRate', JSON.stringify(curRate));
+	//Process UTC date and time to dispaly as browsers default timezone
+	const apiUTC = new Date(apiData['time']['updated']);
+	let opt = {timeZoneName: 'short', hour12: true};
+	let opt24 = {hour12: false};
+	let apiDate = apiUTC.toLocaleDateString();
+	const apiTimeZone = apiUTC.toLocaleTimeString('default', opt).split(/[ ]/g);
+	const apiTimeZone24 = apiUTC.toLocaleTimeString('default', opt24).split(/[ ]/g);
+	const apiTime = apiTimeZone[0].split(/[:]/g);
+	const apiTime24 = apiTimeZone24[0].split(/[:]/g);
+	let priceTime = apiTime[0] + ':' + apiTime[1];
+	let priceTime24 = apiTime24[0] + ':' + apiTime24[1];
+	if (apiTimeZone.length === 2) {
+		document.getElementById('time-zone').innerText = apiTimeZone[1];
+		document.getElementById('select-time-format').options.selectedIndex = 1;
+		
+	} else if (apiTimeZone.length > 2) {
+		document.getElementById('time-zone').innerText = apiTimeZone[2];
+		document.getElementById('select-time-format').options.selectedIndex = 0;
+		document.getElementById('12').innerText = apiTimeZone[1];
+		document.getElementById('12').value = priceTime;
+		document.getElementById('24').value = priceTime24;
+	}
+	//Add international currency format, remove fractional fiat value, then display results
+	const apiPrice = intFormat(apiData['bpi'][curFiat]);
+	if (isNaN(apiPrice)) {
+		document.getElementById('bitcoin-price').innerHTML = "<img src='favicon.png' width='20px' height='20px'></img>" + apiPrice + ' ' + curFiat;
+		document.getElementById('input-fiat').placeholder = apiPrice;
+		document.getElementById('price-time').innerText = priceTime;
+		document.getElementById('price-date').innerText = apiDate;
+	}
+	else {
+		alert('Failed to get current API data from coindesk.com, apiData:' + apiData);
+		document.getElementById('bitcoin-price').innerHTML = "<font style='font-size: 0.6em; text-transform: uppercase; font-weight: 800;'>API Failed to load- Refresh</font>";
+	}
+	//store API fiat rate to each select option for future calls
+	document.getElementById('select-fiat').options[2].value = intFormat(apiData.bpi.EUR);
+	document.getElementById('select-fiat').options[1].value = intFormat(apiData.bpi.GBP);
+	document.getElementById('select-fiat').options[0].value = intFormat(apiData.bpi.USD);
+	focusBack();
+}
+
+
+//onLoad->  Get Coindesk's current Bitcoin price API & store to localStorage
+//Note: Coindesk updates JSON file every minute avail info BTC,USD,GBP,EUR,Timestamp
+//International currency format by default is en-US
+getAPI("https://api.coindesk.com/v1/bpi/currentprice.json");
+async function getAPI(url) {
+	let apiObject = await fetch(url);
+	let apiText = await apiObject.text();
+	const apiData = JSON.parse(apiText);
+	//Store API to browsers localStorage for future recall
+	window.localStorage.setItem('apiData', apiText);
+	processAPI(apiData);
+}
+
+
+//onLoad-> get halving-multiple.html and store into element
+getHTML("halving-multiple.html");
+async function getHTML(mdFile) {
+	let mdObject = await fetch(mdFile);
+	let mdText = await mdObject.text();
+	document.getElementById("halving-multiple").innerHTML = mdText;
+}
+
+
+//onLoad-> get MIT-license.md and store into element
+getMD("MIT-license.md");
+async function getMD(mdFile) {
+	let mdObject = await fetch(mdFile);
+	let mdText = await mdObject.text();
+	document.getElementById("mit-license").innerHTML = mdText;
+}
+
+
+//onLoad->  get bitcon stats .csv file
+//convert to JSON file & object
+//store CSV object into individual div elements
+getCSV("stats_051322.csv");
+async function getCSV(csvFile) {
+	let csvObject = await fetch(csvFile);
+	let csvText = await csvObject.text();
+	//console.log("bitcoin-stats csv file -> " + csvText);
+	const CSVToJSON = csv => {
+        const lines = csv.split('\r\n');
+        const keys = lines[0].split(',');
+		//console.log(csv);
+		//console.log(keys);
+		//console.log(lines);
+		//console.log(lines[0]);
+		let columnNumber = 0;
+		let rowNumber = 1;
+		let columnAmount = keys.length;
+		let rowBackGroundColor = "Light";
+		var divRow = document.createElement("div");
+		var divHeader = document.createElement("div")
+		var divHeaderCell = document.createElement("div");
+		divHeader.className = "dataHeader";
+		divHeader.id = "Header";
+		for (let counter = 0; counter < keys.length; counter++) {
+			divHeaderCell = document.createElement("div");
+			divHeaderCell.innerHTML = (keys[counter]);
+			divHeaderCell.className = "dataHeaderCell";
+			divHeaderCell.id = "Key" + counter;
+			divHeader.appendChild(divHeaderCell);
+			//console.log(divHeaderCell.innerHTML);
+			if (keys.length === counter + 1) {
+				data.append(divHeader);
+				//console.log(divHeader);
+			}
+		}
+        return lines.slice(1).map(line => {
+			//console.log(line);
+			return line.split(',').reduce((acc, cur, i) => {
+                const toAdd = {};
+				const Row = [];
+                toAdd[keys[i]] = cur;
+				Row[i] = cur;
+				//console.log(Row);
+				//console.log(acc);
+				//console.log(cur);
+				//console.log(keys);
+				//console.log(toAdd);
+				columnNumber++;
+				//console.log(columnNumber);
+				//console.log(columnNumberAmount);
+				var divCell = document.createElement("div");
+				divCell.innerHTML = (cur);
+				divCell.className = "dataCell";
+				divCell.id = "r" + rowNumber + "c" + columnNumber;
+				divRow.appendChild(divCell);
+				if (columnNumber > columnAmount-1) {
+					divRow.className = "data" + rowBackGroundColor;
+					divRow.id = "row" + rowNumber;
+					data.append(divRow);
+					//console.log(rowNumber);
+					//console.log(divRow.id);
+					divRow = document.createElement("div");
+					rowNumber++;
+					columnNumber = 0;
+					if (rowBackGroundColor === "Light") {
+						rowBackGroundColor = "Dark";
+					} else { 
+						rowBackGroundColor = "Light";
+					}
+				}
+                return { ...acc, ...toAdd };
+            }, {});
+        });
+    };
+	const objCSV = CSVToJSON(csvText);
+	//store objCSV to global session storage
+	window.value = objCSV;
+	addYears();
+	updateData();
+}
+
+
+//onLoad-> Populate options for select year for time machine
+function addYears() {
+	objCSV = window.value;
+	let sel = document.getElementById("select-year");
+	let today = new Date();
+	for (i = 1; i < objCSV.length; i++) {
+		let opt = document.createElement("option");
+		opt.value = objCSV[i].Date;
+		opt.text = new Date(objCSV[i].Date).getFullYear();
+		sel.add(opt);
+		if ( i == 7 ) {
+			document.getElementById("select-year").value = opt.value
+		}
+	}
+}
+</Script>
+</body>
+</html>
