@@ -28,7 +28,7 @@ Browser based main file used to load all external dependancies, html, css, javas
 ### Official Site: 
 • https://bitcoincalc.org 
 
-### mirrored github repo: 
+### Mirrored GitHub Repo: 
 • https://andybb311.github.io/bitcoincalc.org 
 
 Feedback welcomed.  
