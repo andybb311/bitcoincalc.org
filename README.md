@@ -32,6 +32,8 @@ Browser based main file used to load all external dependancies, html, css, javas
 
 • logo.png https://github.com/andybb311/bitcoincalc.org/blob/main/logo.png 
 
+***
+
 ### Supporting Files:
 • README.md https://github.com/andybb311/bitcoincalc.org/blob/main/README.md 
 
