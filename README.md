@@ -1,5 +1,5 @@
 # bitcoincalc.org
-A simple open source bitcoin calculator to project hypothetical scenarios derived from historical data. 
+An open sourced, trend based, bitcoin prediction model derived from values of each previous bitcoin halving event, combined to provide a clear linear projection.
 
 ### Official Site:
 • https://bitcoincalc.org 
