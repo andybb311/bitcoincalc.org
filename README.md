@@ -1,7 +1,20 @@
-## bitcoincalc.org 
+### bitcoincalc.org 
 
-A simple open source bitcoin calculator to project hypothetical scenarios derived from historical data.  
-### Source Files: 
+A simple open source bitcoin calculator to project hypothetical scenarios derived from historical data. 
+
+#### Official Site: 
+• https://bitcoincalc.org 
+
+#### Mirrored GitHub Repo: 
+• https://andybb311.github.io/bitcoincalc.org 
+
+Feedback welcomed.  
+Criticism highly encouraged.  
+;) 
+
+-andy 
+
+#### Source Files: 
 • stats_051322.csv https://github.com/andybb311/bitcoincalc.org/blob/main/stats_051322.csv 
 
 Comma seperated file derived from the original Bitcoin Rewards Dristrubtion Model 3_8_22.xlsx spreadsheet used to assign reward quantity & time based datasets. 
@@ -18,21 +31,9 @@ Browser based main file used to load all external dependancies, html, css, javas
 
 • logo.png https://github.com/andybb311/bitcoincalc.org/blob/main/logo.png 
 
-### Supporting Files: 
+#### Supporting Files: 
 • README.md https://github.com/andybb311/bitcoincalc.org/blob/main/README.md 
 
 • bitcoin_halving_multiple.pdf https://github.com/andybb311/bitcoincalc.org/blob/main/bitcoin_halving_multiple.pdf 
 
 • 'Bitcoin Rewards Distribution Model 3_8_22'.xlsx https://github.com/andybb311/bitcoincalc.org/blob/main/Bitcoin%20Rewards%20Distribution%20Model%203_8_22.xlsx 
-
-### Official Site: 
-• https://bitcoincalc.org 
-
-### Mirrored GitHub Repo: 
-• https://andybb311.github.io/bitcoincalc.org 
-
-Feedback welcomed.  
-Criticism highly encouraged.  
-;) 
-
--andy
